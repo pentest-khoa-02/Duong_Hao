@@ -130,7 +130,7 @@ Code comment is ignored by the compiler.
 JS statements are composed of: values, operators, expressions, keywords and comments.
 
 Semicolons `;` separate JS statement. Add a semicolon at the end of each executable statement
-```
+```js
 let a, b;
 a = 2;
 b = 3;
@@ -149,7 +149,7 @@ JavaScript Variables can be declared in 4 ways:
 - Automatically
 - Using `var`
 - Using `let` (The `let` keyword was introduced in ES6 (2015))
-- Using `const`
+- Using `const` (The `const` keyword was introduced in ES6 (2015))
 
 In this first example, x, y, and z are undeclared variables.
 
@@ -299,15 +299,14 @@ Variables declared with the var keyword can NOT have block scope:
 
 **Data types**
 ---
-**JavaScript has 8 Datatypes**
+**JavaScript has 6 basic Datatypes**
 1. String
 2. Number
-3. Bigint
-4. Boolean
+3. Boolean
+4. Array
 5. Undefined
 6. Null
-7. Symbol
-8. Object
+7. Object
 
 **The Object Datatype**
 
@@ -316,4 +315,358 @@ The object data type can contain:
 1. An object
 2. An array
 3. A date
+
+**JavaScript Types are Dynamic**
+```js
+let x;       // Now x is undefined
+x = 5;       // Now x is a Number
+x = "John";  // Now x is a String
+```
+**JavaScript Strings**
+
+Strings are written with quotes. You can use single or double quotes:
+```js
+// Using double quotes:
+let carName1 = "Volvo XC60";
+
+// Using single quotes:
+let carName2 = 'Volvo XC60';
+```
+
+**JavaScript Numbers**
+
+All JavaScript numbers are stored as decimal numbers (floating point).
+
+Numbers can be written with, or without decimals:
+```js
+// With decimals:
+let x1 = 34.00;
+
+// Without decimals:
+let x2 = 34;
+```
+
+Javascript numbers are always one type:
+double (64-bit floating point).
+
+**JavaScript Booleans**
+
+Booleans can only have two values: `true` or `false`
+```js
+let x = 5;
+let y = 5;
+let z = 6;
+(x == y)       // Returns true
+(x == z)       // Returns false
+```
+
+**JavaScript Arrays**
+
+```js
+const cars = ["Saab", "Volvo", "BMW"];
+```
+
+**JavaScript Objects**
+
+JavaScript objects are written with curly braces {}.
+
+Object properties are written as name:value pairs, separated by commas.
+
+```js
+const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+```
+
+**Undefined**
+
+In JavaScript, a variable without a value, has the value undefined. The type is also undefined.
+
+```js
+let car;    // Value is undefined, type is undefined
+```
+
+Any variable can be emptied, by setting the value to undefined. The type will also be undefined.
+
+```js
+car = undefined;    // Value is undefined, type is undefined
+```
+
+**JavaScript Functions**
+---
+
+A JavaScript function is a block of code designed to perform a particular task.
+
+A JavaScript function is executed when "something" invokes it (calls it).
+
+**JavaScript Function Syntax**
+
+A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ().
+
+Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).
+
+The parentheses may include parameter names separated by commas:
+(parameter1, parameter2, ...)
+
+The code to be executed, by the function, is placed inside curly brackets: {}
+
+```js
+function name(parameter1, parameter2, parameter3) {
+  // code to be executed
+}
+```
+
+In the ES6 version, you can use arrow function to create function expressions. 
+
+```js
+// function expression
+let x = function(x, y){
+    return x * y;
+}
+```
+
+can be written as
+
+```js
+// function expression using arrow function
+let x = (x, y) => x * y;
+```
+
+Function in JS don't need to return a value.
+
+**Arrays**
+---
+An array is a special variable, which can hold more than one value
+
+It is a common practice to declare arrays with the const keyword.
+
+```js
+const cars = ["Saab", "Volvo", "BMW"];
+```
+
+Note: Array indexes start with 0.
+
+[0] is the first element. [1] is the second element.
+
+**Changing an Array Element**
+
+```js
+const cars = ["Saab", "Volvo", "BMW"];
+let car = cars[0];  // car = "Saab"
+```
+
+Array can have any element with difference type
+
+**Converting an Array to a String**
+
+```js
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let str = fruits.toString();
+// str = Banana,Orange,Apple,Mango
+```
+
+**Adding Array Elements**
+
+The easiest way to add a new element to an array is using the push() method:
+
+```js
+const fruits = ["Banana", "Orange", "Apple"];
+fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+```
+
+**The length Property**
+```js
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let size = fruits.length; // 4
+```
+
+**JavaScript Array join()**
+
+The join() method also joins all array elements into a string.
+
+It behaves just like toString(), but in addition you can specify the separator:
+
+```js
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+```
+
+**JavaScript Array pop()**
+
+The pop() method removes the last element from an array:
+
+```js
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();
+```
+
+The pop() method returns the value that was "popped out":
+
+```js
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = fruits.pop(); // fruit = "Mango"
+```
+
+**JavaScript Array delete()**
+
+Using delete() leaves undefined holes in the array.
+
+```js
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+delete fruits[0];
+```
+
+**Sorting an Array**
+
+The sort() method sorts an array alphabetically:
+
+```js
+const a = [3, 4, 1, 2];
+fruits.sort();
+```
+
+**Reversing an Array**
+
+```js
+const a = [3, 4, 1, 2];
+fruits.reverse();
+```
+
+**The Compare Function**
+
+```js
+function(a, b){return a - b}
+```
+
+When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+
+If the result is negative, a is sorted before b.
+
+If the result is positive, b is sorted before a.
+
+If the result is 0, no changes are done with the sort order of the two values.
+
+```js
+const a = [1, 2, 3, 4];
+a.sort(function(a, b) {return b - a}); // 4 3 2 1
+```
+
+**JavaScript condition**
+---
+
+```js
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}
+```
+
+**switch-case**
+```js
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+```
+
+The default case does not have to be the last case in a switch block
+
+**JavaScript For Loop**
+---
+
+**for**
+```js
+for (expression 1; expression 2; expression 3) {
+  // code block to be executed
+}
+```
+
+expression 1, 2, 3 can be empty
+
+while/do-while is similar
+
+**for in**
+
+The JavaScript for in statement loops through the properties of an Object:
+
+```js
+for (variable in array) {
+  code
+}
+```
+
+**Array.forEach()**
+
+The forEach() method calls a function (a callback function) once for each array element.
+
+```js
+const numbers = [45, 4, 9, 16, 25];
+
+let txt = "";
+numbers.forEach(myFunction);
+
+function myFunction(value, index, array) {
+  txt += value;
+}
+```
+
+**for of**
+
+The JavaScript for of statement loops through the values of an iterable object.
+
+It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:
+
+```js
+for (variable of iterable) {
+  // code block to be executed
+}
+```
+
+**String**
+---
+
+```js
+let a = "This is a String";
+let b = 'Here is a String"
+```
+
+**Methods**
+
+- charAt(): Returns the character at a specified index (position)
+- charCodeAt(): Returns the Unicode of the character at a specified index
+- concat(): Returns two or more joined strings
+```js
+let a = "AB";
+let b = "CD"
+let c = a.concat(b);  // c = "ABCD"
+```
+
+- indexOf(): Returns the index (position) of the first occurrence of a value in a string
+- lastIndexOf(): Returns the index (position) of the last occurrence of a value in a string
+- length: return the length of string
+- split(): Splits a string into an array of substrings, returns the new array, does not change the original string
+```js
+const a = "Duong Quang Hao";
+let arr = a.split();
+```
+
+- substring():
+```js
+let text = "Hello world!";
+let result = text.substring(1, 4); // ell
+```
+
+- toLowerCase();
+- toUpperCase();
+- match(): 
+- search(): Searches a string for a value, or regular expression, and returns the index (position) of the match
+- replace()
+- replaceAll()
 
