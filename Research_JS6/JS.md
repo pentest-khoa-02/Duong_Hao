@@ -17,6 +17,226 @@ ES6 comes with significant changes to the JavaScript language. It brought severa
 
 - Opera 38
 
+**let and const keywords**
+
+"const" enables the users to define constants. Variables were previously declared using "var" which had function scope and were hoisted to the top. It means that a variable can be used before declaration. But, the "let" variables and constants have block scope which is surrounded by curly-braces "{}" and cannot be used before declaration.
+
+```js
+let i = 10;
+console.log(i);   //Output 10
+
+const PI = 3.14;
+console.log(PI);  //Output 3.14
+```
+
+**Arrow Functions**
+
+ES6 provides a feature known as Arrow Functions. It provides a more concise syntax for writing function expressions by removing the "function" and "return" keywords.
+
+Arrow functions are defined using the fat arrow (=>) notation.
+
+```js
+// Arrow function
+let sumOfTwoNumbers = (a, b) => a + b;
+console.log(sum(10, 20)); // Output 30
+```
+
+**Multi-line Strings**
+
+ES6 also provides Multi-line Strings. Users can create multi-line strings by using back-ticks(`).
+
+```js
+let info = `Duong Hao
+            D22
+            Ha Nam`
+```
+
+**Default Parameters**
+
+In ES6, users can provide the default values right in the signature of the functions
+
+```js
+//ES6
+let calculateArea = function(height = 100, width = 50) {  
+    return heght * width;
+}
+
+//ES5
+var calculateArea = function(height, width) {  
+   height =  height || 50;
+   width = width || 80;
+   return heght * width;
+}
+```
+
+**Template Literals**
+
+ES6 introduces very simple string templates along with placeholders for the variables. The syntax for using the string template is ${PARAMETER} and is used inside of the back-ticked string.
+
+```js
+let ten = "Hao"
+let name = `My name is ${ten}` // My name is Hao
+```
+
+**Destructuring Assignment**
+
+Destructuring is one of the most popular features of ES6. The destructuring assignment is an expression that makes it easy to extract values from arrays, or properties from objects, into distinct variables.
+
+There are two types of destructuring assignment expressions, namely, Array Destructuring and Object Destructuring
+
+```js
+//Array Destructuring
+let fruits = ["Apple", "Banana"];
+let [a, b] = fruits; // Array destructuring assignment
+console.log(a, b);
+
+//Object Destructuring
+let person = {name: "Peter", age: 28};
+let {name, age} = person; // Object destructuring assignment
+console.log(name, age);
+```
+
+**Enhanced Object Literals**
+
+ES6 provides enhanced object literals which make it easy to quickly create objects with properties inside the curly braces.
+
+```js
+function getInfo(name, age) {
+   return {
+      name, age
+   }
+}
+let hao = getInfo("Hao, 20");
+```
+
+**Classes**
+
+More intuitive, OOP-style and boilerplate-free classes.
+
+```js
+class Shape {
+    constructor (id, x, y) {
+        this.id = id
+        this.move(x, y)
+    }
+    move (x, y) {
+        this.x = x
+        this.y = y
+    }
+}
+```
+
+Class Inheritance
+
+```js
+class Rectangle extends Shape {
+    constructor (id, x, y, width, height) {
+        super(id, x, y)
+        this.width  = width
+        this.height = height
+    }
+}
+class Circle extends Shape {
+    constructor (id, x, y, radius) {
+        super(id, x, y)
+        this.radius = radius
+    }
+}
+```
+
+**Base Class Access**
+
+Intuitive access to base class constructor and methods.
+
+```js
+class Shape {
+    …
+    toString () {
+        return `Shape(${this.id})`
+    }
+}
+class Rectangle extends Shape {
+    constructor (id, x, y, width, height) {
+        super(id, x, y)
+        …
+    }
+    toString () {
+        return "Rectangle > " + super.toString()
+    }
+}
+class Circle extends Shape {
+    constructor (id, x, y, radius) {
+        super(id, x, y)
+        …
+    }
+    toString () {
+        return "Circle > " + super.toString()
+    }
+}
+```
+
+**Static Members**
+
+Simple support for static class members.
+
+```js
+class Rectangle extends Shape {
+    …
+    static defaultRectangle () {
+        return new Rectangle("default", 0, 0, 100, 100)
+    }
+}
+class Circle extends Shape {
+    …
+    static defaultCircle () {
+        return new Circle("default", 0, 0, 100)
+    }
+}
+var defRectangle = Rectangle.defaultRectangle()
+var defCircle    = Circle.defaultCircle()
+```
+Getter/Setter
+
+```js
+class Rectangle {
+    constructor (width, height) {
+        this._width  = width
+        this._height = height
+    }
+    set width  (width)  { this._width = width               }
+    get width  ()       { return this._width                }
+    set height (height) { this._height = height             }
+    get height ()       { return this._height               }
+    get area   ()       { return this._width * this._height }
+}
+var r = new Rectangle(50, 20)
+r.area === 1000
+```
+
+**Modules**
+
+We can use the "import" or "export" statement in a module to import or export variables, functions, classes or any other component from/to different files and modules.
+
+`person.js`
+
+```js
+const name = "Hao";
+const age = 20;
+
+export {name, age};
+```
+
+`main.js`
+
+```js
+import { name, age } from "./person.js";
+console.log(name;) // Hao
+```
+
+
+**JS BASIC**
+---
+
 
 **Output**
 ---
