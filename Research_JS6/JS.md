@@ -233,6 +233,45 @@ import { name, age } from "./person.js";
 console.log(name;) // Hao
 ```
 
+**Promises**
+
+In ES6, Promises are used for asynchronous execution
+
+```js
+/* Co 3 trang thai cua promise
+    1. pending(ro ri bo nho,...)
+    2. Fullfilled (resolve)
+    3. Reject     (reject)
+*/
+var promise = new Promise(
+    // Executor
+    function(resolve, reject){
+      //Logic
+      //Thanh cong: resolve
+      //That bai: reject
+    }
+)
+
+// Co 3 phuong thuc cua promise
+
+promise 
+      .then(function(){
+          // duoc goi khi resolve dc goi
+          console.log("Succesfully");
+      })
+      .catch(function(){
+          // duoc goi khi reject duoc goi
+          console.log('Failure');
+      })
+      .finally(function(){
+          // duoc goi khi resolve hoac reject
+          console.log('Done!');
+      })
+
+```
+
+
+
 
 **JS BASIC**
 ---
