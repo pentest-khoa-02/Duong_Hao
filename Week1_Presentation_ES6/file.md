@@ -60,6 +60,7 @@ var a = 10;
 ```js
 carName = "Volvo";
 var carName;
+console.log(carName); // Volvo
 ```
 
 > var is reassigned
