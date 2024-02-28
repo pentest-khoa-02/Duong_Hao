@@ -6,16 +6,15 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
+// kiem tra thu muc public voi phuong thuc static
 app.use(express.static(path.join(__dirname, '/public')));
 
-console.log(path.join(__dirname, '/public'))
-
-console.log(path.join(__dirname, '/public'));
-
-// Template handlebars
+// Template engine la handlebars
 app.engine('hbs', engine(
     {extname: '.hbs'}
 ));
+
+// set view engine la handlebars
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/resources/views'))
 
@@ -25,6 +24,10 @@ app.get("/home", (req, res) => {
 
 app.get("/news", (req, res) =>{
   res.render('news')
+})
+
+app.get("/search", (req, res) =>{
+  res.render('search')
 })
 
 app.listen(port, () => {
