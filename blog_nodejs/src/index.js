@@ -6,8 +6,15 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
+const route = require('./routes');
+
 // kiem tra thu muc public voi phuong thuc static
 app.use(express.static(path.join(__dirname, '/public')));
+
+// su dung middleware cho form data(post)
+app.use(express.urlencoded({extended:true}));
+// xu li du lieu voi code JS gui len
+app.use(express.json());
 
 // Template engine la handlebars
 app.engine('hbs', engine(
@@ -18,15 +25,10 @@ app.engine('hbs', engine(
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/resources/views'))
 
-app.get("/home", (req, res) => {
-  res.render('home');
-});
+route(app);
 
-app.get("/news", (req, res) =>{
-  res.render('news')
-})
-
-app.get("/search", (req, res) =>{
+app.post("/search", (req, res) =>{
+  console.log(req.body);
   res.render('search')
 })
 
