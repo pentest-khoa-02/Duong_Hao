@@ -5,7 +5,7 @@ const newsControllers = require('../app/controllers/NewsController');
 
 // cac tuyen duong khop tu tren xuong
 
-//router.use('/:slug', newsControllers.show);
-router.use('/', newsControllers.index);
+router.get('/:slug', newsControllers.show);
+router.get('/', newsControllers.index);
 
 module.exports = router;
