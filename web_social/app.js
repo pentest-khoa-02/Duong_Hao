@@ -1,15 +1,15 @@
-const express = require("express");
-const path = require('path');
-const app = express();
+import express from "express";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import appConfig from "./config/appConfig.js";
+import route from "./routes/index.js";
 const port = 3000;
-const route = require('./route');
-
-app.use(express.static(path.join(__dirname, '/public')));
-
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const app = express();
 
 route(app);
+appConfig(app, __dirname);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

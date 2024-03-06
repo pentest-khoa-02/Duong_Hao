@@ -1,5 +1,5 @@
 const show = (req, res) => {
-    res.render('feed');
+    res.render('video');
 }
 
 export default { show };

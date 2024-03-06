@@ -11,6 +11,7 @@
     "web",
     "socialweb"
   ],
+  "type": "module",
   "author": "Duong Hao",
   "license": "ISC",
   "dependencies": {
