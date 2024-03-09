@@ -8,6 +8,8 @@ import marketRouter from './market.js';
 import blogRouter from './blog.js';
 import timelineRouter from './timeline.js';
 import settingRouter from './setting.js';
+import upgradeRouter from './upgrade.js';
+import FormLoginRouter from './form-login.js';
 
 function route(app){
     app.use('/messages', messagesRouter);
@@ -20,6 +22,8 @@ function route(app){
     app.use('/blog', blogRouter);
     app.use('/timeline', timelineRouter);
     app.use('/setting', settingRouter);
+    app.use('/upgrade', upgradeRouter);
+    app.use('/form-login', FormLoginRouter);
 }
 
 export default route;
