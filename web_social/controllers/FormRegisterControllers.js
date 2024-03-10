@@ -1,5 +1,5 @@
 const show = (req, res) => {
-    res.render("form-login", {layout: false});
+    res.render("form-register", {layout: false});
 }
 
 export default { show };

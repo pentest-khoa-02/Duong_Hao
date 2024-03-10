@@ -9,7 +9,8 @@ import blogRouter from './blog.js';
 import timelineRouter from './timeline.js';
 import settingRouter from './setting.js';
 import upgradeRouter from './upgrade.js';
-import FormLoginRouter from './form-login.js';
+import formLoginRouter from './form-login.js';
+import formResgisterRouter from './form-register.js';
 
 function route(app){
     app.use('/messages', messagesRouter);
@@ -23,7 +24,8 @@ function route(app){
     app.use('/timeline', timelineRouter);
     app.use('/setting', settingRouter);
     app.use('/upgrade', upgradeRouter);
-    app.use('/form-login', FormLoginRouter);
+    app.use('/form-login', formLoginRouter);
+    app.use('/form-register', formResgisterRouter);
 }
 
 export default route;
