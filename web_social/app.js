@@ -10,7 +10,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
 
-app.use(expressLayout);
+const pr = ['/feed', '/blog', '/messages', '/video', '/event', '/pages', '/groups', '/market', '/blog', '/setting', '/timeline', '/upgrade'];
+
+app.use(pr, expressLayout);
 
 route(app);
 appConfig(app, __dirname);

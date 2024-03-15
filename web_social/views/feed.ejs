@@ -1,3 +1,4 @@
+<% contentFor('body') %>
 <!-- main contents -->
 <main id="site__main" class="2xl:ml-[--w-side]  xl:ml-[--w-side-sm] p-2.5 h-[calc(100vh-var(--m-top))] mt-[--m-top]">
 
@@ -926,7 +927,8 @@
     
 </main>
 
-<% contentFor('feedContent') %>
+<% contentFor('subcontent') %>
+
 <!-- post preview modal --> 
 <div class="hidden lg:p-20 max-lg:!items-start" id="preview_modal" uk-modal="">
     
@@ -1113,6 +1115,7 @@
     </div>
     
 </div>
+
 <!-- create status -->
 <div class="hidden lg:p-20 uk- open" id="create-status" uk-modal="">
 
@@ -1200,6 +1203,7 @@
     </div>
 
 </div>
+
 <!-- create story -->
 <div class="hidden lg:p-20" id="create-story" uk-modal="">
 

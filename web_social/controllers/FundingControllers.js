@@ -1,5 +1,5 @@
 const show = (req, res) => {
-    res.render("form-register", {layout: false});
+    res.render('funding');
 }
 
 export default { show };

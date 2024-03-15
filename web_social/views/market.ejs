@@ -1,4 +1,4 @@
-<div id="wrapper">
+<% contentFor('body') %>
     <!-- main contents -->
     <main id="site__main" class="2xl:ml-[--w-side]  xl:ml-[--w-side-sm] p-2.5 h-[calc(100vh-var(--m-top))] mt-[--m-top]">
 
@@ -798,10 +798,8 @@
         </div>
         
     </main>
-</div>
 
-<% contentFor('marketContent') %>
-
+<% contentFor('subcontent') %>
 <!-- create new product button -->
 <button type="button" class="fixed bottom-0 right-0 m-10" uk-toggle="target: #create_product" uk-tooltip="title:Add Product ; offset:10">
     <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-sky-400 to-sky-600 rounded-full">
@@ -1078,6 +1076,3 @@
     </div>
     
 </div>
-
-<!--Chat box-->
-<%- include('partials/chatbox.ejs') %>

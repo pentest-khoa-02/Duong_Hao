@@ -1,5 +1,5 @@
 const show = (req, res) => {
-    res.render('form-login');
+    res.render('games');
 }
 
 export default { show };

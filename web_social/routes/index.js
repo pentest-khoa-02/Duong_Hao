@@ -9,8 +9,10 @@ import blogRouter from './blog.js';
 import timelineRouter from './timeline.js';
 import settingRouter from './setting.js';
 import upgradeRouter from './upgrade.js';
-import formLoginRouter from './form-login.js';
-import formResgisterRouter from './form-register.js';
+import FormLoginRouter from './form-login.js';
+import GameRouter from './games.js'
+import FundingRouter from './funding.js'
+
 
 function route(app){
     app.use('/messages', messagesRouter);
@@ -24,8 +26,9 @@ function route(app){
     app.use('/timeline', timelineRouter);
     app.use('/setting', settingRouter);
     app.use('/upgrade', upgradeRouter);
-    app.use('/form-login', formLoginRouter);
-    app.use('/form-register', formResgisterRouter);
+    app.use('/form-login', FormLoginRouter);
+    app.use('/games', GameRouter);
+    app.use('/funding', FundingRouter);
 }
 
 export default route;
